@@ -1,0 +1,27 @@
+if(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+    cmake_minimum_required (VERSION 3.14)
+    # TODO: handle iOS case (hopefully with new cmake support, otherwise, with parameter hack)
+    include(mac-build.cmake)
+endif()
+
+if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+    cmake_minimum_required (VERSION 3.12)
+    include(linux-build.cmake)
+endif()
+
+if(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
+    cmake_minimum_required (VERSION 3.14)
+    include(win-build.cmake)
+endif()
+
+set(CMAKE_CXX_STANDARD 17)
+
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_DEBUG ${CMAKE_BINARY_DIR}/bin/debug)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY_DEBUG ${CMAKE_BINARY_DIR}/bin/debug)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG ${CMAKE_BINARY_DIR}/bin/debug)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_RELEASE ${CMAKE_BINARY_DIR}/bin/release)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY_RELEASE ${CMAKE_BINARY_DIR}/bin/release)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE ${CMAKE_BINARY_DIR}/bin/release)
