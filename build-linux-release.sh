@@ -1,3 +1,3 @@
 cd release
-cmake --build
+cmake --build .
 cd ..

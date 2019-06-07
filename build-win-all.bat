@@ -1,4 +1,4 @@
 cd win
-..\build-win-debug.bat
-..\build-win-release.bat
+call ..\build-win-debug.bat
+call ..\build-win-release.bat
 cd..

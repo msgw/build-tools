@@ -1,3 +1,3 @@
 cd debug
-cmake --build
+cmake --build .
 cd ..
