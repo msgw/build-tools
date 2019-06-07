@@ -1,17 +1,16 @@
 if(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
-    cmake_minimum_required (VERSION 3.14)
     # TODO: handle iOS case (hopefully with new cmake support, otherwise, with parameter hack)
     include(mac-build.cmake)
+    set(CMAKE_CONFIGURATION_TYPES Debug Release CACHE TYPE INTERNAL FORCE )
 endif()
 
 if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-    cmake_minimum_required (VERSION 3.12)
     include(linux-build.cmake)
 endif()
 
 if(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
-    cmake_minimum_required (VERSION 3.14)
     include(win-build.cmake)
+    set(CMAKE_CONFIGURATION_TYPES Debug Release CACHE TYPE INTERNAL FORCE )
 endif()
 
 set(CMAKE_CXX_STANDARD 17)

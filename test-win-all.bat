@@ -1,1 +1,4 @@
-cmake -G "Visual Studio 16 2019" -A x64 ../..
+cd win
+..\test-win-debug.bat
+..\test-win-release.bat
+cd..
