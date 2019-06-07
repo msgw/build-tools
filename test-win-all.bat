@@ -1,4 +1,4 @@
 cd win
-..\test-win-debug.bat
-..\test-win-release.bat
+call ..\test-win-debug.bat
+call ..\test-win-release.bat
 cd..
